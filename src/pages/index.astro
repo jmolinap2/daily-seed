@@ -1,0 +1,50 @@
+---
+import "../styles/global.css";
+
+// Nombre que aparece en el saludo. Cambialo por el de ella.
+const nombre = "mi amor";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Para ti 💛</title>
+    <meta name="description" content="Algo distinto para ti, cada dia." />
+    <meta name="theme-color" content="#ff6a88" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>💛</text></svg>" />
+
+    <!-- Tipografias usadas por los temas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Dancing+Script:wght@500;700&family=Playfair+Display:wght@500;700&family=Quicksand:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="corazones" aria-hidden="true"></div>
+
+    <div class="wrap">
+      <header class="encabezado">
+        <h1 class="saludo">Hola, {nombre}</h1>
+        <p class="fecha" id="fecha"></p>
+      </header>
+
+      <main>
+        <!-- El contenido del dia lo inyecta el script -->
+        <div id="contenido"></div>
+      </main>
+
+      <nav class="controles" aria-label="Controles">
+        <button class="btn" id="btn-sorpresa" type="button">✨ Sorprendeme</button>
+        <button class="btn" id="btn-hoy" type="button">Volver a hoy</button>
+      </nav>
+    </div>
+
+    <script>
+      import "../scripts/render.js";
+    </script>
+  </body>
+</html>
